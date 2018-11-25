@@ -1,0 +1,8 @@
+<h1><%= @car.make %></h1>
+<h2><%= @car.model %></h2>
+<h2><%= @car.year %></h2>
+<h2><%= @car.contact %></h2>
+
+<%= link_to 'Back', root_path %>
+<%= link_to 'Edit', edit_car_path(@car) %>
+<%= link_to 'Delete', car_path(@car), method: :delete %>
