@@ -1,18 +1,18 @@
 class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
 	def index
-	  @cars = Car.all
+	  @cars = Car.all.order('make ASC')
 	end
 
 	def show
 	end
 
 	def new
-	  @car = Car.new
+	  @car = current_user.cars.build
 	end
 
 	def create
-	  @car = Car.new(car_params)
+	  @car = current_user.cars.build(car_params)
 	  if @car.save
 	  	redirect_to root_path
 	  else

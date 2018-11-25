@@ -5,6 +5,3 @@
 	<% carModel = car.model + ' ' + car.year.to_s %>
 	<h5><%= link_to carModel, car_path(car) %></h5>
 <% end %>
-
-
-<%= link_to 'Add Car', new_car_path %>
