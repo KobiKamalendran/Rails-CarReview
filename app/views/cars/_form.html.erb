@@ -1,0 +1,7 @@
+<%= simple_form_for @car do |f| %>
+  <%= f.input :make, label: 'Make', placeholder: 'Audi' %>
+  <%= f.input :model, label: 'Model', placeholder: 'A5' %>
+  <%= f.input :year, placeholder: '2018' %>
+  <%= f.input :contact, placeholder: 'audiLtd@gmail.com' %>
+  <%= f.button :submit %>
+<% end %>
