@@ -5,10 +5,14 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+<h1>Reviews</h1>
+<% @reviews.each do |review| %>
+  <%= review.message %>
+  <%= link_to 'Edit Review', edit_review_path(review) %>
+  <%= link_to 'Delete Review', review_path(review), method: :delete %>
+<% end %>
 
+
+<br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
