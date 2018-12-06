@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, only: [:new, :edit]
 	def index
 	  if params[:type].blank?	
 	  	@cars = Car.all.order('make ASC')
@@ -11,6 +12,11 @@ class CarsController < ApplicationController
 	end
 
 	def show
+		if @car.reviews.blank?
+			@average = 0
+		else
+			@average = @car.reviews.average(:rating).round(1)
+		end
 	end
 
 	def new
