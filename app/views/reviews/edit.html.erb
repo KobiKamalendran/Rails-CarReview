@@ -1,6 +1,9 @@
 <h1>Editing Review</h1>
 
-<%= render 'form', review: @review %>
+<%= simple_form_for([@car,@review]) do |f| %>
+	<%= f.input :rating %>
+	<%= f.input	:comment %>
+	<%= f.button :submit %>
 
-<%= link_to 'Show', @review %> |
-<%= link_to 'Back', reviews_path %>
+<% end %>
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_142359) do
+ActiveRecord::Schema.define(version: 2018_12_06_205337) do
 
   create_table "car_types", force: :cascade do |t|
     t.string "name"
@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 2018_12_06_142359) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.text "comment"
     t.integer "rating"
-    t.text "message"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.integer "user_id"
+    t.integer "car_id"
   end
 
   create_table "types", force: :cascade do |t|

@@ -5,12 +5,19 @@
 <h2><%= @car.year %></h2>
 <h2><%= @car.contact %></h2>
 
-<%= link_to 'Back', root_path %>
 
 <% if user_signed_in? && @car.user_id == current_user.id %> 
-
+<div>
 <%= link_to 'Edit', edit_car_path(@car) %>
+</div>
 <%= link_to 'Delete', car_path(@car), method: :delete %>
 
+<div>
+<%= link_to 'Add Review', new_car_review_path(@car) %>
+</div>
 
 <% end %>
+
+<%= render @car.reviews %>
+
+<%= link_to 'Back', root_path %>
