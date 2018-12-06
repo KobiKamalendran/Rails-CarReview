@@ -1,4 +1,4 @@
-<h1>Cars</h1>
+
 
 
 
@@ -8,10 +8,19 @@
 
 <% else %>
 
-	<% @cars.each do |car| %>
-		<h2><%= car.make %></h2>
-		<% carModel = car.model + ' ' + car.year.to_s %>
-		<h5><%= link_to carModel, car_path(car) %></h5>
+	<div class="row">
+
+		<% @cars.each do |car| %>
+		<div class="col-sm-3">
+			<%= image_tag car.car_img.url(:medium), class: "car" %>
+			<h2><%= car.make %></h2>
+			<% carModel = car.model + ' ' + car.year.to_s %>
+			<h5><%= link_to carModel, car_path(car) %></h5>
+
+		</div>
 	<% end %>
+
+
+	</div>
 
 <% end %>

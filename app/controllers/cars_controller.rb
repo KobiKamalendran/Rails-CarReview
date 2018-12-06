@@ -5,7 +5,7 @@ class CarsController < ApplicationController
 	  	@cars = Car.all.order('make ASC')
 	  else
 	  	@type_id = Type.find_by(name: params[:type]).id
-	  	@cars = Car.where(:type_id => @type_id)
+	  	@cars = Car.where(:type_id => @type_id).order('make ASC')
 	  end
 
 	end
@@ -49,7 +49,7 @@ class CarsController < ApplicationController
 	private
 
 		def car_params
-		  params.require(:car).permit(:make, :model, :year, :contact, :type_id)
+		  params.require(:car).permit(:make, :model, :year, :contact, :type_id, :car_img)
 		end
 
 		def find_car

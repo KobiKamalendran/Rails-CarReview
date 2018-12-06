@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_101342) do
+ActiveRecord::Schema.define(version: 2018_12_06_142359) do
 
   create_table "car_types", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 2018_12_06_101342) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "type_id"
+    t.string "car_img_file_name"
+    t.string "car_img_content_type"
+    t.bigint "car_img_file_size"
+    t.datetime "car_img_updated_at"
   end
 
   create_table "reviews", force: :cascade do |t|
