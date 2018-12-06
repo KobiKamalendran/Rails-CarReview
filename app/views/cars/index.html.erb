@@ -1,7 +1,17 @@
 <h1>Cars</h1>
 
-<% @cars.each do |car| %>
-	<h2><%= car.make %></h2>
-	<% carModel = car.model + ' ' + car.year.to_s %>
-	<h5><%= link_to carModel, car_path(car) %></h5>
+
+
+
+<% if @cars.count == 0 %>
+	<h3>Nothing to show</h3>
+
+<% else %>
+
+	<% @cars.each do |car| %>
+		<h2><%= car.make %></h2>
+		<% carModel = car.model + ' ' + car.year.to_s %>
+		<h5><%= link_to carModel, car_path(car) %></h5>
+	<% end %>
+
 <% end %>

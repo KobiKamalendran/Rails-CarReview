@@ -1,7 +1,13 @@
 class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
 	def index
-	  @cars = Car.all.order('make ASC')
+	  if params[:type].blank?	
+	  	@cars = Car.all.order('make ASC')
+	  else
+	  	@type_id = Type.find_by(name: params[:type]).id
+	  	@cars = Car.where(:type_id => @type_id)
+	  end
+
 	end
 
 	def show
