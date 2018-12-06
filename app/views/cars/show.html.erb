@@ -4,5 +4,11 @@
 <h2><%= @car.contact %></h2>
 
 <%= link_to 'Back', root_path %>
+
+<% if user_signed_in? && @car.user_id == current_user.id %> 
+
 <%= link_to 'Edit', edit_car_path(@car) %>
 <%= link_to 'Delete', car_path(@car), method: :delete %>
+
+
+<% end %>
