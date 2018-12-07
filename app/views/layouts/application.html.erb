@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <head>
     <title>Myapp</title>
     <%= csrf_meta_tags %>
@@ -10,54 +11,34 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
-      
-      <div class="navbar-header">
-        <%= link_to 'Cars', root_path, class: 'navbar-brand' %>
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <%= link_to 'HOME', root_path, { :class =>"w3-bar-item w3-button w3-padding-large"} %>
+    <% if user_signed_in? %>
+      <%= link_to "ADD CAR", new_car_path, { :class =>"w3-bar-item w3-button w3-padding-large w3-hide-small"} %>
+    <% end %>
+
+
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">FILTER BY <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <% Type.all.each do |type| %>
+            <%= link_to type.name.upcase, cars_path(type: type.name), { :class =>"w3-bar-item w3-button" } %>
+        <% end %>
       </div>
+    </div>
+    <%= link_to "SIGN UP", new_user_registration_path, { :class => "w3-padding-large w3-hover-red w3-hide-small w3-right" } %>
+    <% if user_signed_in? %>
+      <%= link_to "SIGN OUT", destroy_user_session_path,{ method: :delete, :class => "w3-padding-large w3-hover-red w3-hide-small w3-right" } %>
+    <% else %>  
+      <%= link_to "LOG IN", new_user_session_path, { :class => "w3-padding-large w3-hover-red w3-hide-small w3-right" } %>
+    <% end %>  
 
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li><%= link_to "Add Car", new_car_path %></li>
-        <% end %>
-
-        <li class="dropdown">
-          <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Type
-           <span class="caret"></span>
-         </a>
-         <ul class="dropdown-menu" role="menu">
-          <li><%= link_to 'All', cars_path %></li>
-          <li class="divider"></li>
-          <% Type.all.each do |type| %>
-          <li>
-            <%= link_to type.name, cars_path(type: type.name) %>
-            <li class="divider"></li>
-          </li>
-          <% end %>
-         </ul>
-        </li>
-
-
-
-
-      </ul>
-
-
-      <ul class="nav navbar-nav navbar-right">
-
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>  
-          <li><%= link_to "Log In", new_user_session_path %></li>
-        <% end %>
-
-      </ul>
-
-
-
-    </nav>
-
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
 
 
 
