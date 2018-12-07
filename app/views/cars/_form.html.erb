@@ -1,5 +1,5 @@
 <%= simple_form_for @car, :html => { :multipart => true } do |f| %>
-  <%= select_tag(:type_id, options_for_select(@carTypes), prompt: "Select") %>
+  <%= select_tag(:type_id, options_for_select(@carTypes)) %>
   <%= f.input :make, label: 'Make', placeholder: 'Audi' %>
   <%= f.input :model, label: 'Model', placeholder: 'A5' %>
   <%= f.input :year, placeholder: '2018' %>
