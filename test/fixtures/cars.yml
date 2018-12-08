@@ -9,7 +9,10 @@ one:
   type: three
 
 two:
-  make: MyString
-  model: MyString
-  year: 1
-  contact: MyString
+  make: Maserati
+  model: Quattroporte
+  year: 2017
+  contact: maserati@gmail.com
+  user: valid
+  type: one
+  

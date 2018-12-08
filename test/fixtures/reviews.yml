@@ -1,9 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  comment: MyText
-  rating: 1
+  comment: Brilliant Car
+  rating: 9
+  user: valid
+  car: one
+
 
 two:
-  comment: MyText
-  rating: 1
+  comment: Average Car
+  rating: 5
+  user: valid
+  car: two
+
+three:
+  comment: Nothing special
+  rating: 6
+  user: valid
+  car: two
+
+four:
+  comment: Decent, nothing much
+  rating: 6
+  user: valid
+  car: two

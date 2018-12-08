@@ -4,6 +4,7 @@ class CarTest < ActiveSupport::TestCase
 
   setup do
   	@car = cars(:one)
+  	@carTwo = cars(:two)
   end
 		
   test "invalid without make" do
@@ -41,6 +42,27 @@ class CarTest < ActiveSupport::TestCase
   	assert @car.valid?
   end
 
+  test "#reviews" do
+  	assert_equal 1, @car.reviews.size 
+  end
 
+  test "#reviews after review added" do
+  	@user = users(:valid)
+  	assert_equal 3, @carTwo.reviews.size
+  	@review = Review.new
+  	@review.comment = 'Its alright'
+  	@review.rating = 5
+  	@review.user = @user
+  	@review.car = @carTwo
+  	@review.save
+  	assert_equal 4, @carTwo.reviews.size
+  end
+
+  test "#reviews after review deleted" do
+  	assert_equal 3, @carTwo.reviews.size
+  	@review = reviews(:two)
+  	@review.destroy
+  	assert_equal 2, @carTwo.reviews.size
+  end
 
 end
