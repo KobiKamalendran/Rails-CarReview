@@ -4,4 +4,5 @@ class Car < ApplicationRecord
   has_many	:reviews
   has_attached_file :car_img, styles: { medium: "300x300>", thumb: "100x100>", :quality => 100 }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :car_img, content_type: /\Aimage\/.*\z/
+  validates :make, :model, :year, :contact, presence: true
 end

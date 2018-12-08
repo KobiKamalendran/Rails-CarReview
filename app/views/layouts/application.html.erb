@@ -30,11 +30,11 @@
         <% end %>
       </div>
     </div>
-    <%= link_to "SIGN UP", new_user_registration_path, { :class => "w3-padding-large w3-hover-red w3-hide-small w3-right" } %>
+    <%= link_to "SIGN UP", new_user_registration_path, { :class => "w3-padding-large w3-hover-light-grey w3-hide-small w3-right" } %>
     <% if user_signed_in? %>
-      <%= link_to "SIGN OUT", destroy_user_session_path,{ method: :delete, :class => "w3-padding-large w3-hover-red w3-hide-small w3-right" } %>
+      <%= link_to "SIGN OUT", destroy_user_session_path,{ method: :delete, :class => "w3-padding-large w3-hover-light-grey w3-hide-small w3-right" } %>
     <% else %>  
-      <%= link_to "LOG IN", new_user_session_path, { :class => "w3-padding-large w3-hover-red w3-hide-small w3-right" } %>
+      <%= link_to "LOG IN", new_user_session_path, { :class => "w3-padding-large w3-hover-light-grey w3-hide-small w3-right" } %>
     <% end %>  
 
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
@@ -47,8 +47,6 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="container">
     <%= yield %>
-    </div>
   </body>
 </html>

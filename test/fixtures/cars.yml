@@ -1,10 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  make: MyString
-  model: MyString
-  year: 1
-  contact: MyString
+  make: Audi
+  model: A3
+  year: 2018
+  contact: audiLtd@gmail.com
+  user: valid
+  type: three
 
 two:
   make: MyString
