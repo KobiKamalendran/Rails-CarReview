@@ -37,4 +37,6 @@ en:
     contact:
       title: 'Contact Us' 
       contact_us: 'Complete the following form to get in touch with us'
-
+      label_name: 'Name:'
+      label_email: 'Email:'
+      label_message: 'Message:'
