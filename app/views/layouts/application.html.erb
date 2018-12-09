@@ -33,6 +33,7 @@
         <% end %>
       </div>
     </div>
+    <%= link_to "CONTACT US", contact_path, { :class => "w3-padding-large w3-hover-light-grey w3-hide-small w3-right" } %>
     <%= link_to "SIGN UP", new_user_registration_path, { :class => "w3-padding-large w3-hover-light-grey w3-hide-small w3-right" } %>
     <% if user_signed_in? %>
       <%= link_to "SIGN OUT", destroy_user_session_path,{ method: :delete, :class => "w3-padding-large w3-hover-light-grey w3-hide-small w3-right" } %>
