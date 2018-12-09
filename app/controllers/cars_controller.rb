@@ -1,6 +1,13 @@
 class CarsController < ApplicationController
 	before_action :find_car, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:new, :edit]
+	
+	rescue_from ActiveRecord::RecordNotFound, with: :no_Record
+
+	def no_Record
+		redirect_to root_path
+	end
+	
 	def index
 	  if params[:type].blank?	
 	  	@cars = Car.all.order('make ASC')
