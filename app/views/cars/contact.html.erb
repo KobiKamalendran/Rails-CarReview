@@ -1,0 +1,15 @@
+
+<h1>Contact Us</h1>
+
+<%= form_tag(request_contact_path, method: :post) do %>
+	<%= label_tag :name, 'Name:' %>
+	<%= text_field_tag :name %>
+
+	<%= label_tag :email, 'Email:' %>
+	<%= text_field_tag :email %>
+
+	<%= label_tag :message, 'Message:' %>
+	<%= text_area_tag :message %>
+
+	<%= submit_tag "Contact us" %>
+<% end %>

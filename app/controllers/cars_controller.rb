@@ -11,6 +11,24 @@ class CarsController < ApplicationController
 
 	end
 
+	def contact
+	end
+
+	def request_contact
+		name = params[:name]
+		email = params[:email]
+		message = params[:message]
+
+		if email.blank?
+			flash[:alert] = "You must supply email address"
+		else
+			flash[:notice] = "Thank you. We'll be in touch"
+			ContactMailer.contact_email(name,email,message).deliver_now
+		end
+
+		redirect_to root_path
+	end
+
 	def show
 		if @car.reviews.blank?
 			@average = 0

@@ -6,11 +6,12 @@
 #
 valid:
   email: 'one@gmail.com'
+  encrypted_password: nothing
  
 
 
-# column: value
-#
+
 two:
   email: 'two@gmail.com'
-# column: value
+  encrypted_password: nothing
+
