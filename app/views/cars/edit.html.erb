@@ -2,10 +2,10 @@
 
 <%= simple_form_for @car, :html => { :multipart => true } do |f| %>
   <%= f.select :type_id, @carTypes %>
-  <%= f.input :make, label: 'Make', placeholder: 'Audi' %>
-  <%= f.input :model, label: 'Model', placeholder: 'A5' %>
-  <%= f.input :year, placeholder: '2018' %>
-  <%= f.input :contact, placeholder: 'audiLtd@gmail.com' %>
+  <%= f.input :make, label: t('.label_make'), placeholder: t('.placeholder_make') %>
+  <%= f.input :model, label: t('.label_model'), placeholder: t('.placeholder_model') %>
+  <%= f.input :year, placeholder: t('.placeholder_year') %>
+  <%= f.input :contact, placeholder: t('.placeholder_contact') %>
   <%= f.file_field :car_img %>
   <%= f.button :submit %>
 <% end %>

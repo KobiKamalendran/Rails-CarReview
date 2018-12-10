@@ -4,28 +4,28 @@
 </div>
 
 <div class="w3-half w3-text-white w3-padding">
-	<h1>Make: <%= @car.make %></h1>
-	<h2>Rating: <%= @average %>/10 </h2>
-	<span>Based on: <%= @car.reviews.count %></span>
-	<h2>Model: <%= @car.model %></h2>
-	<h2>Year: <%= @car.year %></h2>
-	<h2>Contact: <%= @car.contact %></h2>
+	<h1><%= t('.label_make') + @car.make %></h1>
+	<h2><%= t('.label_rating') + @average.to_s + "/10" %></h2>
+	<span><%= t('.label_based_on') + @car.reviews.count.to_s %></span>
+	<h2><%= t('.label_model') + @car.model %></h2>
+	<h2><%= t('.label_year') + @car.year.to_s %></h2>
+	<h2><%= t('.label_contact') + @car.contact %></h2>
 	<% if user_signed_in? && @car.user_id == current_user.id %> 
 		<div>
-		<%= link_to 'Edit', edit_car_path(@car) %>
+		<%= link_to t('.link_to_edit'), edit_car_path(@car) %>
 		</div>
-		<%= link_to 'Delete', car_path(@car), method: :delete %>
+		<%= link_to t('.link_to_delete'), car_path(@car), method: :delete %>
 
 		<div>
-		<%= link_to 'Add Review', new_car_review_path(@car) %>
+		<%= link_to t('.link_to_add_review'), new_car_review_path(@car) %>
 		</div>
 
 	<% end %>
 	<% if @car.reviews.count!=0 %>
-		<h2>Reviews:</h2>
+		<h2><%= t('.label_reviews') %></h2>
 		<%= render @car.reviews %>
 	<% end %>
-	<%= link_to 'Back', root_path %>
+	<%= link_to t('.link_to_back'), root_path %>
 
 
 </div>

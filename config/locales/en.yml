@@ -1,42 +1,48 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
 
+  cars:
+     contact:
+            title: Contact Us 
+            contact_us: Complete the following form to get in touch with us
+            label_name: "Name:"
+            label_email: "Email:"
+            label_message: "Message:"
+     form:
+          label_make: Make
+          label_model: Model
+          placeholder_make: Audi
+          placeholder_model: A3
+          placeholder_year: 2018
+          placeholder_contact: audiLtd@gmail.com
 
-  car:
-    contact:
-      title: 'Contact Us' 
-      contact_us: 'Complete the following form to get in touch with us'
-      label_name: 'Name:'
-      label_email: 'Email:'
-      label_message: 'Message:'
+     edit:
+          label_make: Make
+          label_model: Model
+          placeholder_make: Audi
+          placeholder_model: A3
+          placeholder_year: 2018
+          placeholder_contact: audiLtd@gmail.com
+          
+     index:
+           nothing: Nothing to show
+     new:
+         link_to_back: BACK
+     show:
+          link_to_edit: Edit 
+          link_to_back: Back
+          link_to_delete: Delete 
+          link_to_add_review: Add Review
+          label_make: "Make: "
+          label_model: "Model: "
+          label_rating: "Rating: "
+          label_year: "Year: "
+          label_contact: "Contact: "
+          label_reviews: "Reviews: "
+          label_based_on: "Based on: "
+
+  reviews:
+      edit:
+        header: Editing Review 
+      new:
+        header: New Review

@@ -1,15 +1,15 @@
 
-<h1>Contact Us</h1>
+<h1><%= t('.title') %></h1>
 
 <%= form_tag(request_contact_path, method: :post) do %>
-	<%= label_tag :name, 'Name:' %>
+	<%= label_tag :name, t('.label_name') %>
 	<%= text_field_tag :name %>
 
-	<%= label_tag :email, 'Email:' %>
+	<%= label_tag :email, t('.label_email') %>
 	<%= text_field_tag :email %>
 
-	<%= label_tag :message, 'Message:' %>
+	<%= label_tag :message, t('.label_message') %>
 	<%= text_area_tag :message %>
 
-	<%= submit_tag "Contact us" %>
+	<%= submit_tag t('.title') %>
 <% end %>
